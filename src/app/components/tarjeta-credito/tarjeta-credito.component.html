@@ -6,7 +6,7 @@
                     <h3 class="titulo">Tarjeta Credito</h3>
                 </div>
             </div>
-        </div>                            <!--https://www.youtube.com/watch?v=iqHKPc0ImvE minuto 36:03 -->
+        </div>                            <!--https://www.youtube.com/watch?v=iqHKPc0ImvE minuto 01:52:10 -->
     </div>
     <div class="row mt-4">
         <div class="col-lg-6">
@@ -59,13 +59,13 @@
                     <h5 class="titulo">Listado de Tarjetas</h5>
                     <table class="table">
                         <tbody>
-                            <tr *ngFor="let tarjeta of listTarjetas">
+                            <tr *ngFor="let tarjeta of listTarjetas; let i = index">
                                 <td>{{tarjeta.titular}}</td>
                                 <td>{{tarjeta.numeroTarjeta}}</td>
                                 <td>{{tarjeta.fechaExpiracion}}</td>
                                 <td>{{tarjeta.cvv}}</td>
                                 <td><i class="fas fa-edit text-info"></i></td>
-                                <td><i class="fas fa-trash-alt text-danger"></i></td>
+                                <td><i (click)="eliminarTarjeta(i)" class="fas fa-trash-alt text-danger"></i></td>
                             </tr>
                         </tbody>
                     </table>

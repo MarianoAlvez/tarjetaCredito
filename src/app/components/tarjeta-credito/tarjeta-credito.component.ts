@@ -41,9 +41,13 @@ export class TarjetaCreditoComponent implements OnInit {
     //console.log(tarjeta);  solo para controlar 
 
     this.listTarjetas.push(tarjeta)
-    this.toastr.success('La tarjeta fue registrada con exito!', 'Tarjeta registrada!');
-    this.form.reset(); //resetea el formulario
+    this.toastr.success('La tarjeta fue registrada con exito!', 'Tarjeta Registrada'); //https://www.npmjs.com/package/ngx-toastr
+    this.form.reset(); //resetea el formulario    
+  }
 
-    
+  eliminarTarjeta(index: number) {
+    //console.log(index); verifico que esta tomando el index
+    this.listTarjetas.splice(index, 1);
+    this.toastr.error('La tarjeta fue eliminada con exito!', 'Tarjeta Eliminada');
   }
 }
